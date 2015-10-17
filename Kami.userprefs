@@ -1,10 +1,11 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MouseLook.cs">
+﻿<Properties GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PaperGeneratorController.cs">
     <Files>
+      <File FileName="Assets\Scripts\PaperGeneratorController.cs" Line="17" Column="1" />
       <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" Line="65" Column="13" />
       <File FileName="Assets\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" Line="70" Column="50" />
-      <File FileName="Assets\Scripts\MouseLook.cs" Line="4" Column="3" />
+      <File FileName="Assets\Scripts\MouseLook.cs" Line="18" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
