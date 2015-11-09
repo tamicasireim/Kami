@@ -31,7 +31,7 @@ public class PaperGeneratorController : MonoBehaviour {
 		//paperSize = prefabPaper.GetComponent<Renderer>().bounds.size;
 
 		// lance la fonction toutes les 5 secondes, à partir de la 5ème seconde
-		InvokeRepeating("spawn_paper", 5, 5);
+		InvokeRepeating("spawn_paper", 3, 3);
 
 	}
 	
