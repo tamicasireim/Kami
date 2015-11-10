@@ -23,11 +23,13 @@ public class InteractionWithPaper : MonoBehaviour {
 		{
 			rayCasted = hitInfo.transform.CompareTag("Paper");
 		}
+
 		// rayCasted est true si un objet possédant le tag Paper est détécté
 
 		if (rayCasted) {
 			GameObject paper = hitInfo.transform.gameObject;
 			if (Input.GetKeyDown("a")) {
+				//Debug.Log ("Je ne suis pas fou");
 				paper.GetComponent<PaperController>().is_attacked("Cutable");
 			}
 			if (Input.GetKeyDown("z")) {
