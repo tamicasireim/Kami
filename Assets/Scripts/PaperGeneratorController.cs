@@ -10,15 +10,20 @@ public class PaperGeneratorController : MonoBehaviour {
 		public GameObject prefab;
 		public string type;
 	}
-	
-	public Paper[] paper_tab = new Paper[3];
-	//public GameObject prefabPaper; // le préfab papier
-	public const int paperMax = 10; // Nombre max de papier généré
-	public GameObject sol;
+	private const int CYCLE = 5; //Nombre de papiers à détuire à chaque palier de difficulté
+	private const int MAXPAPER = 10; //Nombre de papiers maximum sur scène
+
+	private int creationRateMin = 300; //Temps de création minimal entre deux papiers initialement (5s)
+	private int creationRateMax = 420; //Temps de création maximal entre deux papiers initialement (7s)
+	private int creationRate; //Temps effectif entre l'apparition de deux papiers
+	private int creationCounter=0;
+
+	public Paper[] paperTab = new Paper[3]; //Regroupera nos trois prefab papiers associés à leur type
+	public GameObject sol; //Pour connaitre les limites de création de l'objet
 
 
-	private int paperCounter = 0; // nombre de papier généré
-	private int paperNamingCounter = 1;
+	private int paperDestroyedCounter = 0; //Cycle comptant le nombre de papiers détruits. A chaque cycle, on réinitialise le compteur et on dimiue le range du creationRate
+	private int paperCounter = 0;
 
 	// Gestion des limites de spawn du papier
 	private Bounds solBounds; // limite du sol
@@ -26,55 +31,56 @@ public class PaperGeneratorController : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		// initialisation des variables de la taille sol et taille des papiers.
-		solBounds = sol.GetComponent<Renderer>().bounds;
-		//paperSize = prefabPaper.GetComponent<Renderer>().bounds.size;
-
-		// lance la fonction toutes les 5 secondes, à partir de la 5ème seconde
-		InvokeRepeating("spawn_paper", 2, 5);
-
+		paperSize = paperTab [0].prefab.GetComponent<Renderer> ().bounds.size; //Initialisation de la taille des papiers
+		solBounds = sol.GetComponent<Renderer>().bounds; //Initialisation de la dimension du sol
+		creationRate = Random.Range (creationRateMin, creationRateMax); //Initialisation du temps avant la première apparition de papier.
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		
-	}
-
-	public GameObject spawn_paper() {
-		if (paperCounter < paperMax) {
-			float x = Random.Range(solBounds.min.x, solBounds.max.x);
-			float y = solBounds.max.y + paperSize.y/2 + Random.Range(0, 10);
-			float z = Random.Range(solBounds.min.z, solBounds.max.z);
-
-			//on détermine le type
-			int type = Random.Range (0,3);
-
-			return create_paper(new Vector3 (x, y, z), type);
-		} else {
-			return null;
+	// SI on a pas atteint le nombre maximum de papiers sur la scène
+		if (paperCounter < MAXPAPER) {
+			//S'il est temps de créer un nouveau papier
+			if (creationCounter == creationRate) {
+				SpawnPaper ();
+				creationCounter = 0;
+				MajCreationRate ();
+			} else {
+				creationCounter++; //Sinon on incrémente le compteur de frames
+			}
 		}
 	}
 
-	GameObject create_paper(Vector3 coordonate, int type) {
-		GameObject new_paper = (GameObject) Instantiate(paper_tab[type].prefab, coordonate, Quaternion.identity);
-
-		// le nouvel objet est l'enfant du PaperGeneratorController
-		new_paper.transform.parent = this.transform;
-
-		// on renomme le papier et on incrémente le paperCounter
-		paperCounter ++;
-		new_paper.name = "Paper " + paperNamingCounter ++;
-
-		//MAJ du type
-		new_paper.GetComponent<PaperController>().paperType = paper_tab[type].type;
-
-		Debug.Log("Creation d'un papier " + new_paper.name + " en (" + coordonate.x + ", " + coordonate.y + " , " + coordonate.z + ") de type " + paper_tab[type].type );
-
-		return new_paper;
+	void MajCreationRate() {
+		//Si on atteint la fin d'un cycle/niveau, on augmente la fréquence d'apparition des papiers, si elle n'a pas atteint son maximum
+		if (paperDestroyedCounter == CYCLE && creationRateMin > 60) { 
+			creationRateMin -= 60;
+			creationRateMax -= 60;
+		}
+		creationRate = Random.Range (creationRateMin, creationRateMax); //Maj du creationRate
 	}
 
-	public void aPaperIsDestroyed () {
-		paperCounter --;
+	public void SpawnPaper() {
+		//Initialisation des coordonnées du nouveau papier
+		float x = Random.Range(solBounds.min.x + paperSize.x/2, solBounds.max.x - paperSize.x/2);
+		float y = solBounds.max.y + paperSize.y/2 + Random.Range(0, 10);
+		float z = Random.Range(solBounds.min.z + paperSize.x/2, solBounds.max.z - paperSize.x/2);
+		
+		int type = Random.Range (0,3); //On détermine le type
+		CreatePaper(new Vector3 (x, y, z), type);
+	}
+
+	void CreatePaper(Vector3 coordonate, int type) {
+		GameObject newPaper = (GameObject) Instantiate(paperTab[type].prefab, coordonate, Quaternion.identity); //On crée le nouveau papier
+		newPaper.GetComponent<PaperController>().paperType = paperTab[type].type; //On initialise le type du papier
+		newPaper.transform.parent = this.transform; //On le lit à la PaperFactory
+		
+		paperCounter ++; //On augmente le nombre de papiers sur la scène
+		Debug.Log("Creation d'un papier " + newPaper.name + " en (" + coordonate.x + ", " + coordonate.y + " , " + coordonate.z + ") de type " + paperTab[type].type );
+	}
+
+	public void APaperIsDestroyed () {
+		paperDestroyedCounter++;
+		paperCounter--;
 	}
 }

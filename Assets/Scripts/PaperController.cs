@@ -24,12 +24,12 @@ public class PaperController : MonoBehaviour {
 		}		
 	}
 
-	public void is_attacked(string from_type) {
-		if ( from_type == paperType ) {
-			Debug.Log(this.name + " est détruit par une attaque " + from_type + " !");
-			this.SendMessageUpwards("aPaperIsDestroyed");
+	public void IsAttacked(string fromType) {
+		if ( fromType == paperType ) {
+			Debug.Log(this.name + " est détruit par une attaque " + fromType + " !");
+			this.SendMessageUpwards("APaperIsDestroyed");
 
-			// Destroy( GetComponent<Renderer>() );
+			// Destroy( GetComponent<Renderer>() ); // Pas nécessaire si on anime la disparition du papier
 
 			destroy = true;
 			if (anim) {

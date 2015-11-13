@@ -1,10 +1,11 @@
 ﻿<Properties GitUserInfo="UsingGIT">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PaperController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PaperGenerator.cs">
     <Files>
-      <File FileName="Assets\Scripts\PaperController.cs" Line="15" Column="6" />
-      <File FileName="Assets\OVR\Scripts\Util\OVRMainMenu.cs" Line="419" Column="1" />
-      <File FileName="Assets\Scripts\PaperGeneratorController.cs" Line="34" Column="6" />
+      <File FileName="Assets\Scripts\PaperGeneratorController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PaperController.cs" Line="14" Column="3" />
+      <File FileName="Assets\Scripts\InteractionWithPaper.cs" Line="39" Column="46" />
+      <File FileName="Assets\Scripts\PaperGenerator.cs" Line="4" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

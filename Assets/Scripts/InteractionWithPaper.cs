@@ -30,13 +30,13 @@ public class InteractionWithPaper : MonoBehaviour {
 			GameObject paper = hitInfo.transform.gameObject;
 			if (Input.GetKeyDown("a")) {
 				//Debug.Log ("Je ne suis pas fou");
-				paper.GetComponent<PaperController>().is_attacked("Cutable");
+				paper.GetComponent<PaperController>().IsAttacked("Burnable");
 			}
 			if (Input.GetKeyDown("z")) {
-				paper.GetComponent<PaperController>().is_attacked("Crumplable");
+				paper.GetComponent<PaperController>().IsAttacked("Crumplable");
 			}
 			if (Input.GetKeyDown("e")) {
-				paper.GetComponent<PaperController>().is_attacked("Burnable");
+				paper.GetComponent<PaperController>().IsAttacked("Cutable");
 			}
 		}
 	}

@@ -1,75 +1,31 @@
 Base path: C:/Program Files/Unity/Editor/Data
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-7132
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-516
 Cmd: getPlatforms
 Cmd: preprocess
-  insize=464 outsize=464 ok=1
+  insize=447 outsize=447 ok=1
 Cmd: preprocess
-  insize=1101 outsize=1056 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=6833 outsize=3281 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=6833 outsize=1469 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=3951 outsize=2753 kw=POINT ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=3951 outsize=2151 kw=POINT ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=3369 outsize=2103 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=3369 outsize=1266 kw= ok=1
+  insize=1048 outsize=1040 ok=1
 Cmd: preprocess
-  insize=884 outsize=374 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=809 outsize=1258 kw=LEAP_FORMAT_IR ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=809 outsize=1696 kw=LEAP_FORMAT_IR ok=1
+  insize=840 outsize=355 ok=1
 Cmd: preprocess
-  insize=2514 outsize=1827 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=988 outsize=1290 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=988 outsize=827 kw= ok=1
+  insize=2410 outsize=1760 ok=1
 Cmd: preprocess
-  insize=1191 outsize=505 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=985 outsize=1258 kw=LEAP_FORMAT_IR ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=985 outsize=2200 kw=LEAP_FORMAT_IR ok=1
+  insize=1138 outsize=481 ok=1
 Cmd: preprocess
-  insize=1654 outsize=1034 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=898 outsize=1615 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=898 outsize=518 kw= ok=1
+  insize=1576 outsize=990 ok=1
 Cmd: preprocess
-  insize=3960 outsize=1153 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=3124 outsize=2322 kw=LEAP_FORMAT_IR ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=3124 outsize=1778 kw=LEAP_FORMAT_IR ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=3119 outsize=2322 kw=LEAP_FORMAT_IR ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=3119 outsize=3988 kw=LEAP_FORMAT_IR ok=1
+  insize=3821 outsize=1112 ok=1
 Cmd: preprocess
-  insize=895 outsize=382 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=812 outsize=1258 kw=LEAP_FORMAT_IR ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=812 outsize=1696 kw=LEAP_FORMAT_IR ok=1
+  insize=851 outsize=364 ok=1
 Cmd: preprocess
-  insize=1489 outsize=1486 ok=1
+  insize=1445 outsize=1442 ok=1
 Cmd: preprocess
-  insize=862 outsize=373 ok=1
-Cmd: compileSnippet
-  api=4 type=0 insize=788 outsize=1152 kw= ok=1
-Cmd: compileSnippet
-  api=4 type=1 insize=788 outsize=729 kw= ok=1
+  insize=815 outsize=355 ok=1
 Cmd: preprocess
-  insize=1574 outsize=702 ok=1
+  insize=1500 outsize=667 ok=1
+Cmd: preprocess
+  insize=792 outsize=789 ok=1
 Cmd: compileSnippet
   api=4 type=0 insize=1174 outsize=1477 kw= ok=1
 Cmd: compileSnippet
   api=4 type=1 insize=1174 outsize=1087 kw= ok=1
-Cmd: preprocess
-  insize=824 outsize=821 ok=1
